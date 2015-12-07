@@ -20,3 +20,41 @@ def coordenadas_iguais(c1, c2):
 def coordenada_para_cadeia(c):
 	if e_coordenada(c):
 		return "(" + str(c[0]) + " : " + str(c[1]) + ")"
+
+
+
+##############COOOOOODEEEEEEEEEEE###############
+
+
+def cria_coordenada(l,c):
+    if isinstance(l, int) and l>0 and isinstance(c, int) and c>0:
+        return (l,c)
+    else:
+        raise ValueError("cria_coordenada: argumentos invalidos")
+
+def coordenada_linha(l,c):
+    return (l)
+
+def coordenada_coluna(l,c):
+    return (c)
+
+
+#e_coordenada p.ex (0.3,-5) stops at ValueError cria_coordenada:argumentos 
+#invalidos mas n sei if were supposed to take that into account
+def e_coordenada(x):
+    if isinstance(x, tuple) and len(x)==2 and cria_coordenada(x[0],x[1]):
+        return True
+    else:
+        return False
+
+#problema igual na coordenadas_iguais
+
+def coordenadas_iguais(x1,x2):
+    if e_coordenada(x1) and e_coordenada(x2) and x1[0]==x2[0] and x1[1]==x2[1]:
+        return True
+    else:
+        return False
+    
+def coordenada_para_cadeia(x):
+    if e_coordenada(x):
+        return True
